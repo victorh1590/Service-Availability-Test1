@@ -18,7 +18,7 @@ public class ContainerResponseController : ControllerBase
     {
         return new 
         {
-            Date = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"),
+            Date = DateTime.UtcNow.AddHours(-3).ToString("MM/dd/yyyy HH:mm:ss"),
             ContainerId = Environment.MachineName
         };
     }
