@@ -1,16 +1,15 @@
-# Dotnet Base Image
+# Imagem Base
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 
-# Environment Variables
+# Variáveis de Ambiente
 ENV ASPNETCORE_URLS="http://*:5000"
 ENV ASPNETCORE_ENVIRONMENT="Development"
 
-# Application Port
+# Porta
 EXPOSE 5001/tcp
 
-# Build instructions
-
+# Instruções de build.
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["WebApi.csproj", "."]
